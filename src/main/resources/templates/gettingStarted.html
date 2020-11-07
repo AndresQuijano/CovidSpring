@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0' />
+    <link rel="stylesheet" href="/css/styles.css"/>
+    <script type="module" src="/js/addContact.js"></script>
+    <title>Cheesse Mess</title>
+</head>
+<body>
+    <div class="content" >
+        <form id="form-personal" method="post" action="/socialCircle">
+            <div class="content-set">
+                <h1>Datos personales</h1>
+            </div>
+            <div class=content-set>
+                <div class="form-set">
+                    <label for="name" >Nombre</label>
+                    <input id="name" type="text" placeholder="p.e. Javier" required="true" name="name"/>
+                </div>
+                <div class=form-set>
+                    <label for="phone" >Teléfono (con prefijo)</label>
+                    <input id="phone" name="phone" type="tel" required="true" pattern="\+([0-9 ])+"
+                        placeholder="p.e. +57 300 123 45 67"/>
+                </div>
+                <div class=form-set>
+                    <p>Género</p>
+                    <div id=radio-gender>
+                        <div>
+                            <input id="male" type="radio" name="gender" value="male" required="true"/>
+                            <label for="male">Masculino</label>
+                        </div>
+                        <div>
+                            <input id="female" type="radio" name="gender" value="female" required="true"/>
+                            <label for="female">Femenino</label>
+                        </div>
+                        <div>
+                            <input id="other" type="radio" name="gender" value="other" required="true"/>
+                            <label for="other">Otro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-set">
+                    <label for="age">Edad</label>
+                    <input type="number" id="age" name="age" required="true" min="0" max="99"/>
+                </div>
+                <div class="form-set">
+                    <p>Tu estado con relación al COVID-19 es:</p>
+                    <div id="radio-status">
+                        <div>
+                            <input id="uninfected" type="radio" name="status" value="uninfected" required="true"/>
+                            <label for="uninfected">Sano</label>
+                        </div>
+                        <div>
+                            <input id="infected" type="radio" name="status" value="infected" required="true"/>
+                            <label for="infected">Infectado</label>
+                        </div>
+                        <div>
+                            <input id="wasInfected" type="radio" name="status" value="wasInfected" required="true"/>
+                            <label for="wasInfected">Recuperado</label>
+                        </div>
+                        <div>
+                            <input id="many" type="radio" name="status" value="many" required="true"/>
+                            <label for="many">Recuperado e infectado nuevamente</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="content-set">
+                <h1>Tu círculo social</h1>
+                <p class="paragraph">Déjanos conocer un poco tu círculo social. Agrega algunos contactos.
+                    Entre más agregues, más fácil será para nosotros analizar
+                    el impacto del virus a tu alrededor.
+                </p>
+            </div>
+            <div class="content-set">
+                <div class=form-set>
+                    <label id="lblName" for="contactName" >Nombre</label>
+                    <input id="contactName" name="contactName" type="text" placeholder="p.e. Alejandra" required="true" />
+                </div>
+                <div class=form-set>
+                    <label for="phone" >Teléfono</label>
+                    <input id="contactPhone" name="contactPhone" type="tel" required="true"  pattern="\+([0-9 ])+" />
+                </div>
+                <div class=form-set>
+                    <p>Género</p>
+                    <div id=contact-radio-gender>
+                        <div>
+                            <input id="contactMale" type="radio" name="contactGender" value="male" required="true"/>
+                            <label for="contactMale">Masculino</label>
+                        </div>
+                        <div>
+                            <input id="contactFemale" type="radio" name="contactGender" value="female" required="true"/>
+                            <label for="contactFemale">Femenino</label>
+                        </div>
+                        <div>
+                            <input id="contactOther" type="radio" name="contactGender" value="other" required="true"/>
+                            <label for="contactOther">Otro</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-set">
+                    <p>Tu contacto con relación al COVID-19 está:</p>
+                    <div id="contact-radio-status">
+                        <div>
+                            <input id="contactUninfected" type="radio" name="contactStatus" value="uninfected" required="true"/>
+                            <label for="contactUninfected">Sano</label>
+                        </div>
+                        <div>
+                            <input id="contactInfected" type="radio" name="contactStatus" value="infected" required="true"/>
+                            <label for="contactInfected">Infectado</label>
+                        </div>
+                        <div>
+                            <input id="contactWasInfected" type="radio" name="contactStatus" value="wasInfected" required="true"/>
+                            <label for="contactWasInfected">Recuperado</label>
+                        </div>
+                        <div>
+                            <input id="contactDead" type="radio" name="contactStatus" value="dead" required="true"/>
+                            <label for="contactDead">Fallecido</label>
+                        </div>
+                        <div>
+                            <input id="contactUnknown" type="radio" name="contactStatus" value="unknown" required="true"/>
+                            <label for="contactUnknown">No lo sé</label>
+                        </div>
+                        <div>
+                            <input id="contactMany" type="radio" name="contactStatus" value="many" required="true"/>
+                            <label for="contactMany">Recuperado e infectado nuevamente</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-set big-button" >
+                    <button id="btn-add-contact">+</button>
+                </div>
+            </div>
+            <div class=content-set>
+                <div class="contact-container">
+                    <h2>Contactos agregados:</h2>
+                    <table class="table">
+
+                    </table>
+                </div>
+            </div>
+
+            <div class="content-set buttons-container">
+                <div class="buttons">
+                    <button id="btn-back">&lt</button>
+                    <button id="btn-next" form="form-personal">&gt</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

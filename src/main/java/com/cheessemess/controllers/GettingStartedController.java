@@ -4,10 +4,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class indexController {
-    @RequestMapping({"/","/index"})
-    public String getIndex(){
-        System.out.println("Cae");
-        return "index";
+public class GettingStartedController {
+    @RequestMapping("/gettingStarted")
+    public String getInfoPersonalForm(){
+        return "gettingStarted";
     }
 }
